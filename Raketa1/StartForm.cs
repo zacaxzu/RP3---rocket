@@ -17,12 +17,25 @@ namespace Raketa1
             //Location = new Point(Screen.PrimaryScreen.WorkingArea.Size.Width - Width, 0);
             InitializeComponent();
         }
-        /*
-        Image pozadina = Properties.Resources.pozadina;
-        private void StartForm_Paint(object sender, EventArgs e)
+
+        private void gumbPokreni_Click(object sender, EventArgs e)
         {
-            //e.Graphics.DrawImage(pozadina, 0, 0);
+            Form1 formaZaIgru = new Form1();
+            Visible = false;
+            formaZaIgru.ShowDialog();
+            Visible = true;
         }
-        */
+
+        private void gumbZatvori_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        /*
+Image pozadina = Properties.Resources.pozadina;
+private void StartForm_Paint(object sender, EventArgs e)
+{
+//e.Graphics.DrawImage(pozadina, 0, 0);
+}
+*/
     }
 }
