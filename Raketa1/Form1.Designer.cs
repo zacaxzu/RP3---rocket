@@ -38,7 +38,6 @@
             this.labelaBodovi1 = new System.Windows.Forms.Label();
             this.labelaRestartPoruka = new System.Windows.Forms.Label();
             this.labelaPauza = new System.Windows.Forms.Label();
-            //this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
@@ -135,21 +134,12 @@
             this.labelaPauza.TabIndex = 6;
             this.labelaPauza.Text = "Igra je pauzirana!";
             // 
-            // progressBar1
-            // 
-            //this.progressBar1.Location = new System.Drawing.Point(12, 12);
-            //this.progressBar1.Maximum = 1000;
-            //this.progressBar1.Name = "progressBar1";
-            //this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            //this.progressBar1.TabIndex = 7;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
-            //this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelaPauza);
             this.Controls.Add(this.labelaRestartPoruka);
             this.Controls.Add(this.labelaBodovi1);
@@ -162,7 +152,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raketa";
-            //this.Load += new System.EventHandler(this.Form1_Deactivate);
+            this.Activated += new System.EventHandler(this.Form1_Activated);
+            this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);

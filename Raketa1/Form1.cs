@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -65,27 +66,6 @@ namespace Raketa1
         bool kretanje, lijevo, desno;
         int bodovi;
 
-        /*
-        private void Form1_Deactivate(object sender, EventArgs e)
-        {
-            if (!krajIgre)
-            {
-                timer1.Stop();
-                if (kretanje)
-                    kretanje = false;
-                labelaPauza.Visible = true;
-            }
-        }
-        
-        private void Form1_Activated(object sender, EventArgs e)
-        {
-            if (!krajIgre)
-            {
-                labelaPauza.Visible = false;
-                timer1.Start();
-            }
-        }
-        */
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up && kretanje)
@@ -109,6 +89,26 @@ namespace Raketa1
                 lijevo = true;
             if (e.KeyCode == Keys.Right)
                 desno = true;
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            if (!krajIgre)
+            {
+                labelaPauza.Visible = false;
+                timer1.Start();
+            }
+        }
+
+        private void Form1_Deactivate(object sender, EventArgs e)
+        {
+            if (!krajIgre)
+            {
+                timer1.Stop();
+                if (kretanje)
+                    kretanje = false;
+                labelaPauza.Visible = true;
+            }
         }
 
         private void PomakniPozadinu()
