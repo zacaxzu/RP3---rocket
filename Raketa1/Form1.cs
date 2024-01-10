@@ -21,14 +21,28 @@ namespace Raketa1
             PocetnePostavke();
             timer1.Start();
             DoubleBuffered = true;
+
+            labelaBodovi.Parent = prepreka1;
+            labelaBodovi1.Parent = prepreka2;
+            labelaBodovi.Location = labelaBodovi1.Location = new Point(4, 4);
         }
         private void povecajBodove(int dobiveniBodovi)
         {
             bodovi += dobiveniBodovi;
-            labelaBodovi.Text = "Bodovi: " + bodovi;
+            labelaBodovi.Text = labelaBodovi1.Text = "Bodovi: " + bodovi;
         }
+
+        //bool krajIgre;
         private void PocetnePostavke()
         {
+            //progressBar1.Value = 1000;
+
+            labelaPauza.Visible = false;
+            //krajIgre = false;
+            labelaRestartPoruka.Visible = false;
+            prepreka1.Location = new Point(10, 205);
+            prepreka2.Location = new Point(205, 10);
+
             bodovi = 0;
             povecajBodove(0);
             lijevo = desno = false;
@@ -50,6 +64,28 @@ namespace Raketa1
         float[] koordPozadina, koordZid;
         bool kretanje, lijevo, desno;
         int bodovi;
+
+        /*
+        private void Form1_Deactivate(object sender, EventArgs e)
+        {
+            if (!krajIgre)
+            {
+                timer1.Stop();
+                if (kretanje)
+                    kretanje = false;
+                labelaPauza.Visible = true;
+            }
+        }
+        
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            if (!krajIgre)
+            {
+                labelaPauza.Visible = false;
+                timer1.Start();
+            }
+        }
+        */
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up && kretanje)
@@ -58,6 +94,11 @@ namespace Raketa1
                 lijevo = false;
             if (e.KeyCode == Keys.Right)
                 desno = false;
+            /*if (e.KeyCode == Keys.R && krajIgre)
+            {
+                PocetnePostavke();
+                timer1.Start();
+            }*/
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -86,6 +127,7 @@ namespace Raketa1
             }
             Invalidate();
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             PomakniPozadinu();
@@ -110,17 +152,65 @@ namespace Raketa1
                     prepreka2.Top = -prepreka2.Height;
                 }
             }
+            //progressBar1.Value -= 1;
+            if (random.Next() % 100 == 0)
+                StvoriKomet();
+            foreach(Control kontrola in Controls)
+            {
+                if(kontrola is PictureBox x && (string)x.Tag == "komet")
+                {
+                    x.Top += (int)(kretanje ? (brzinaZida + brzinaBroda) : brzinaZida);
+                    if(x.Top > visina)
+                    {
+                        Controls.Remove(kontrola);
+                        x.Dispose();
+                    }
+                }
+            }
+
             Invalidate();
             if (brod.Bounds.IntersectsWith(prepreka1.Bounds)
                 || brod.Bounds.IntersectsWith(prepreka2.Bounds))
+                //|| progressBar1.Value == 0)
                 GameOver();
+            /*
+            if(prepreka1.Top > visina)
+            {   
+                // Jel tu treba nešto prije?
+                progressBar1.Value = Math.Min(progressBar1.Value + 60, 1000);
+            }
+            if (prepreka2.Top > visina)
+            {
+                // I jel tu treba nešto prije?
+                progressBar1.Value = Math.Min(progressBar1.Value + 60, 1000);
+            }*/
+            foreach(Control kontrola in Controls)
+            {
+                if(kontrola is PictureBox x && (string)x.Tag == "komet")
+                {
+                    if (brod.Bounds.IntersectsWith(x.Bounds))
+                        GameOver();
+                }
+            }
         }
 
         private void GameOver()
         {
             timer1.Stop();
+            //krajIgre = true;
+            labelaRestartPoruka.Visible = true;
             MessageBox.Show("Osvojeni bodovi: "
                 + bodovi, "Igra je završila!");
+
+            for(int i = Controls.Count - 1; i >= 0; i--)
+            {
+                if (Controls[i] is PictureBox x && (string)x.Tag == "komet")
+                {
+                    x.Visible = false;
+                    Controls.Remove(Controls[i]);
+                    x.Dispose();
+                }
+            }
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -135,6 +225,21 @@ namespace Raketa1
                 e.Graphics.DrawImage(zid, 0.9f * sirina, koordZid[i],
                     0.1f * sirina, visina);
             }
+        }
+
+        Random random = new Random();
+        private void StvoriKomet()
+        {
+            PictureBox komet = new PictureBox();
+            komet.Size = new Size(20, 20);
+            komet.BackColor = Color.LightSalmon;
+            komet.BorderStyle = BorderStyle.FixedSingle;
+            komet.Top = -komet.Height;
+            komet.Left = (int)(0.1 * sirina + 1)
+                + random.Next(0, (int)(0.8 * sirina - komet.Width));
+            komet.Tag = "komet";
+            Controls.Add(komet);
+            komet.BringToFront();
         }
     }
 }
