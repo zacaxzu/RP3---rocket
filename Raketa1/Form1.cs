@@ -32,13 +32,13 @@ namespace Raketa1
             labelaBodovi.Text = labelaBodovi1.Text = "Bodovi: " + bodovi;
         }
 
-        //bool krajIgre;
+        bool krajIgre;
         private void PocetnePostavke()
         {
             //progressBar1.Value = 1000;
 
             labelaPauza.Visible = false;
-            //krajIgre = false;
+            krajIgre = false;
             labelaRestartPoruka.Visible = false;
             prepreka1.Location = new Point(10, 205);
             prepreka2.Location = new Point(205, 10);
@@ -94,11 +94,11 @@ namespace Raketa1
                 lijevo = false;
             if (e.KeyCode == Keys.Right)
                 desno = false;
-            /*if (e.KeyCode == Keys.R && krajIgre)
+            if (e.KeyCode == Keys.R && krajIgre)
             {
                 PocetnePostavke();
                 timer1.Start();
-            }*/
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -197,7 +197,7 @@ namespace Raketa1
         private void GameOver()
         {
             timer1.Stop();
-            //krajIgre = true;
+            krajIgre = true;
             labelaRestartPoruka.Visible = true;
             MessageBox.Show("Osvojeni bodovi: "
                 + bodovi, "Igra je završila!");
