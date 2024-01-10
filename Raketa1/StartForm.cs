@@ -30,6 +30,11 @@ namespace Raketa1
         {
             Close();
         }
+
+        private void StartForm_Load(object sender, EventArgs e)
+        {
+
+        }
         /*
 Image pozadina = Properties.Resources.pozadina;
 private void StartForm_Paint(object sender, EventArgs e)

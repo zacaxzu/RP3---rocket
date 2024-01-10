@@ -35,7 +35,8 @@
             // 
             // gumbPokreni
             // 
-            this.gumbPokreni.BackColor = System.Drawing.Color.DarkOrange;
+            this.gumbPokreni.BackColor = System.Drawing.Color.OrangeRed;
+            this.gumbPokreni.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gumbPokreni.ForeColor = System.Drawing.Color.Snow;
             this.gumbPokreni.Location = new System.Drawing.Point(69, 127);
             this.gumbPokreni.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
@@ -48,7 +49,8 @@
             // 
             // gumbZatvori
             // 
-            this.gumbZatvori.BackColor = System.Drawing.Color.DarkOrange;
+            this.gumbZatvori.BackColor = System.Drawing.Color.OrangeRed;
+            this.gumbZatvori.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gumbZatvori.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gumbZatvori.Location = new System.Drawing.Point(91, 227);
             this.gumbZatvori.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
@@ -64,6 +66,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
+            this.BackgroundImage = global::Raketa1.Properties.Resources.pozadina;
             this.ClientSize = new System.Drawing.Size(399, 449);
             this.Controls.Add(this.gumbZatvori);
             this.Controls.Add(this.gumbPokreni);
@@ -73,6 +76,7 @@
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Početni izbornik";
+            this.Load += new System.EventHandler(this.StartForm_Load);
             this.ResumeLayout(false);
 
         }
