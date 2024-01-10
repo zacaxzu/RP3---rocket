@@ -38,6 +38,7 @@
             this.labelaBodovi1 = new System.Windows.Forms.Label();
             this.labelaRestartPoruka = new System.Windows.Forms.Label();
             this.labelaPauza = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
@@ -66,7 +67,7 @@
             this.labelaBodovi.BackColor = System.Drawing.Color.Transparent;
             this.labelaBodovi.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaBodovi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelaBodovi.Location = new System.Drawing.Point(9, 7);
+            this.labelaBodovi.Location = new System.Drawing.Point(221, 20);
             this.labelaBodovi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelaBodovi.Name = "labelaBodovi";
             this.labelaBodovi.Size = new System.Drawing.Size(127, 31);
@@ -101,7 +102,7 @@
             this.labelaBodovi1.BackColor = System.Drawing.Color.Transparent;
             this.labelaBodovi1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaBodovi1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelaBodovi1.Location = new System.Drawing.Point(9, 47);
+            this.labelaBodovi1.Location = new System.Drawing.Point(11, 222);
             this.labelaBodovi1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelaBodovi1.Name = "labelaBodovi1";
             this.labelaBodovi1.Size = new System.Drawing.Size(127, 31);
@@ -134,12 +135,21 @@
             this.labelaPauza.TabIndex = 6;
             this.labelaPauza.Text = "Igra je pauzirana!";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(15, 7);
+            this.progressBar1.Maximum = 1000;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelaPauza);
             this.Controls.Add(this.labelaRestartPoruka);
             this.Controls.Add(this.labelaBodovi1);
@@ -175,6 +185,7 @@
         private System.Windows.Forms.Label labelaBodovi1;
         private System.Windows.Forms.Label labelaRestartPoruka;
         private System.Windows.Forms.Label labelaPauza;
+        private System.Windows.Forms.ProgressBar progressBar1;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

@@ -36,7 +36,7 @@ namespace Raketa1
         bool krajIgre;
         private void PocetnePostavke()
         {
-            //progressBar1.Value = 1000;
+            progressBar1.Value = 1000;
 
             labelaPauza.Visible = false;
             krajIgre = false;
@@ -152,7 +152,7 @@ namespace Raketa1
                     prepreka2.Top = -prepreka2.Height;
                 }
             }
-            //progressBar1.Value -= 1;
+            progressBar1.Value -= 1;
             if (random.Next() % 100 == 0)
                 StvoriKomet();
             foreach(Control kontrola in Controls)
@@ -170,10 +170,10 @@ namespace Raketa1
 
             Invalidate();
             if (brod.Bounds.IntersectsWith(prepreka1.Bounds)
-                || brod.Bounds.IntersectsWith(prepreka2.Bounds))
-                //|| progressBar1.Value == 0)
+                || brod.Bounds.IntersectsWith(prepreka2.Bounds)
+                || progressBar1.Value == 0)
                 GameOver();
-            /*
+            
             if(prepreka1.Top > visina)
             {   
                 // Jel tu treba nešto prije?
@@ -183,7 +183,7 @@ namespace Raketa1
             {
                 // I jel tu treba nešto prije?
                 progressBar1.Value = Math.Min(progressBar1.Value + 60, 1000);
-            }*/
+            }
             foreach(Control kontrola in Controls)
             {
                 if(kontrola is PictureBox x && (string)x.Tag == "komet")
