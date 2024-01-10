@@ -111,7 +111,6 @@
             // 
             // labelaRestartPoruka
             // 
-            /*
             this.labelaRestartPoruka.AutoSize = true;
             this.labelaRestartPoruka.BackColor = System.Drawing.Color.Yellow;
             this.labelaRestartPoruka.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,7 +121,6 @@
             this.labelaRestartPoruka.Size = new System.Drawing.Size(189, 62);
             this.labelaRestartPoruka.TabIndex = 5;
             this.labelaRestartPoruka.Text = "Pritisnite R za \r\nponovnu igru.";
-            */
             // 
             // labelaPauza
             // 
@@ -151,7 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
-            this.Controls.Add(this.progressBar1);
+            //this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelaPauza);
             this.Controls.Add(this.labelaRestartPoruka);
             this.Controls.Add(this.labelaBodovi1);
@@ -186,7 +184,7 @@
         private System.Windows.Forms.Label labelaBodovi1;
         private System.Windows.Forms.Label labelaRestartPoruka;
         private System.Windows.Forms.Label labelaPauza;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
