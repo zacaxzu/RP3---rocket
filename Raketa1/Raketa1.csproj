@@ -104,5 +104,12 @@
   <ItemGroup>
     <None Include="Resources\b.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="comet.png" />
+    <Content Include="Resources\comet.jpg" />
+    <Content Include="Resources\comet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

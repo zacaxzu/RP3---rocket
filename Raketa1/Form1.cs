@@ -14,6 +14,8 @@ namespace Raketa1
     public partial class Form1 : Form
     {
         float sirina, visina;
+        bool lijeviRub;
+        bool desniRub;
         public Form1()
         {
             InitializeComponent();
@@ -55,8 +57,10 @@ namespace Raketa1
             koordZid = new float[] { -visina, 0 };
             brod.Location = new Point(
                 (int)sirina / 2 - brod.Size.Width / 2,
-                (int)visina - brod.Size.Height - 10
-            );
+                (int)visina - brod.Size.Height - 10);
+
+            lijeviRub = true;
+            desniRub = false;
         }
 
         Image pozadina = Properties.Resources.pozadina;
@@ -155,7 +159,30 @@ namespace Raketa1
             progressBar1.Value -= 1;
             if (random.Next() % 100 == 0)
                 StvoriKomet();
-            foreach(Control kontrola in Controls)
+
+            // Micanje prepreka1
+            if(lijeviRub)
+            {
+                prepreka1.Left -= 2;
+                prepreka2.Left += 2;
+                if(prepreka1.Left < 0 - prepreka1.Width * 0.5)
+                {
+                    lijeviRub = false;
+                    desniRub = true;
+                }
+            }
+            if(desniRub)
+            {
+                prepreka1.Left += 2;
+                prepreka2.Left -= 2;
+                if (prepreka1.Left > sirina - prepreka1.Width * 0.5)
+                {
+                    lijeviRub = true;
+                    desniRub = false;
+                }
+            }
+
+            foreach (Control kontrola in Controls)
             {
                 if(kontrola is PictureBox x && (string)x.Tag == "komet")
                 {
@@ -176,12 +203,10 @@ namespace Raketa1
             
             if(prepreka1.Top > visina)
             {   
-                // Jel tu treba nešto prije?
                 progressBar1.Value = Math.Min(progressBar1.Value + 60, 1000);
             }
             if (prepreka2.Top > visina)
             {
-                // I jel tu treba nešto prije?
                 progressBar1.Value = Math.Min(progressBar1.Value + 60, 1000);
             }
             foreach(Control kontrola in Controls)
@@ -217,10 +242,12 @@ namespace Raketa1
         {
             for (int i = 0; i < 2; ++i)
             {
+                // pozadina
                 e.Graphics.DrawImage(pozadina, 0, koordPozadina[i], sirina, visina);
             }
             for (int i = 0; i < 2; ++i)
             {
+                // zidovi
                 e.Graphics.DrawImage(zid, 0, koordZid[i], 0.1f * sirina, visina);
                 e.Graphics.DrawImage(zid, 0.9f * sirina, koordZid[i],
                     0.1f * sirina, visina);
@@ -231,12 +258,14 @@ namespace Raketa1
         private void StvoriKomet()
         {
             PictureBox komet = new PictureBox();
+            Debug.WriteLine("Komet stvoren");
             komet.Size = new Size(20, 20);
-            komet.BackColor = Color.LightSalmon;
-            komet.BorderStyle = BorderStyle.FixedSingle;
+            komet.ImageLocation = @"Resources\comet.png";
+            //komet.BackgroundImage = Properties.Resources.comet; // Use the comet.png image
+            //komet.Image = Properties.Resources.comet;
+            //komet.BackgroundImageLayout = ImageLayout.Stretch; // Optional: Stretch the image to fit the PictureBox
             komet.Top = -komet.Height;
-            komet.Left = (int)(0.1 * sirina + 1)
-                + random.Next(0, (int)(0.8 * sirina - komet.Width));
+            komet.Left = (int)(0.1 * sirina + 1) + random.Next(0, (int)(0.8 * sirina - komet.Width));
             komet.Tag = "komet";
             Controls.Add(komet);
             komet.BringToFront();

@@ -5,6 +5,11 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raketa1", "Raketa1\Raketa1.csproj", "{18498958-107B-43C7-9D74-77B6EE1F25A8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DD3F9B01-7409-4909-BD3B-32A0FC285D32}"
+	ProjectSection(SolutionItems) = preProject
+		Raketa1\Resources\comet.jpg = Raketa1\Resources\comet.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
