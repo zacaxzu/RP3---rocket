@@ -115,6 +115,25 @@ namespace Raketa1
             }
         }
 
+        private void p(object sender, KeyPressEventArgs e)
+        {
+            if (!krajIgre)
+            {
+                if(labelaPauza.Visible == false)
+                {
+                    timer1.Stop();
+                    if (kretanje)
+                        kretanje = false;
+                    labelaPauza.Visible = true;
+                }
+                else
+                {
+                    timer1.Start();
+                    labelaPauza.Visible = false;
+                }
+            }
+        }
+
         private void PomakniPozadinu()
         {
             for (int i = 0; i < 2; i++)
@@ -160,7 +179,7 @@ namespace Raketa1
             if (random.Next() % 100 == 0)
                 StvoriKomet();
 
-            // Micanje prepreka1
+            // Micanje prepreka
             if(lijeviRub)
             {
                 prepreka1.Left -= 2;

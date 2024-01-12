@@ -166,6 +166,7 @@
             this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.p);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.brod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).EndInit();
