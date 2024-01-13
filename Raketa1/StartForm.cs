@@ -24,6 +24,16 @@ namespace Raketa1
             Visible = false;
             formaZaIgru.ShowDialog();
             Visible = true;
+            Close();
+        }
+
+        private void gumbPostavke_Click(object sender, EventArgs e)
+        {
+            Postavke formaZaPostavke = new Postavke();
+            Visible = false;
+            formaZaPostavke.ShowDialog();
+            Visible = true;
+            Close();
         }
 
         private void gumbZatvori_Click(object sender, EventArgs e)
@@ -39,7 +49,7 @@ namespace Raketa1
 Image pozadina = Properties.Resources.pozadina;
 private void StartForm_Paint(object sender, EventArgs e)
 {
-//e.Graphics.DrawImage(pozadina, 0, 0);
+//e.Graphics.DrawImage(pozadina, 0, 0); 
 }
 */
     }

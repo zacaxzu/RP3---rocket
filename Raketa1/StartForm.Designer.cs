@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             this.gumbPokreni = new System.Windows.Forms.Button();
             this.gumbZatvori = new System.Windows.Forms.Button();
+            this.gumbPostavke = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gumbPokreni
@@ -52,7 +53,7 @@
             this.gumbZatvori.BackColor = System.Drawing.Color.OrangeRed;
             this.gumbZatvori.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gumbZatvori.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gumbZatvori.Location = new System.Drawing.Point(91, 227);
+            this.gumbZatvori.Location = new System.Drawing.Point(85, 294);
             this.gumbZatvori.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.gumbZatvori.Name = "gumbZatvori";
             this.gumbZatvori.Size = new System.Drawing.Size(203, 47);
@@ -61,6 +62,19 @@
             this.gumbZatvori.UseVisualStyleBackColor = false;
             this.gumbZatvori.Click += new System.EventHandler(this.gumbZatvori_Click);
             // 
+            // gumbPostavke
+            // 
+            this.gumbPostavke.BackColor = System.Drawing.Color.OrangeRed;
+            this.gumbPostavke.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gumbPostavke.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gumbPostavke.Location = new System.Drawing.Point(106, 212);
+            this.gumbPostavke.Name = "gumbPostavke";
+            this.gumbPostavke.Size = new System.Drawing.Size(167, 55);
+            this.gumbPostavke.TabIndex = 2;
+            this.gumbPostavke.Text = "Postavke";
+            this.gumbPostavke.UseVisualStyleBackColor = false;
+            this.gumbPostavke.Click += new System.EventHandler(this.gumbPostavke_Click);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 38F);
@@ -68,6 +82,7 @@
             this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImage = global::Raketa1.Properties.Resources.pozadina;
             this.ClientSize = new System.Drawing.Size(399, 449);
+            this.Controls.Add(this.gumbPostavke);
             this.Controls.Add(this.gumbZatvori);
             this.Controls.Add(this.gumbPokreni);
             this.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -85,5 +100,6 @@
 
         private System.Windows.Forms.Button gumbPokreni;
         private System.Windows.Forms.Button gumbZatvori;
+        private System.Windows.Forms.Button gumbPostavke;
     }
 }

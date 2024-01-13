@@ -53,6 +53,7 @@ namespace Raketa1
             brzinaPozadine = 0.5f;
             brzinaZida = 4;
             brzinaBroda = 5;
+            brzinaPrepreke = 5;
             koordPozadina = new float[] { -visina, 0 };
             koordZid = new float[] { -visina, 0 };
             brod.Location = new Point(
@@ -66,6 +67,7 @@ namespace Raketa1
         Image pozadina = Properties.Resources.pozadina;
         Image zid = Properties.Resources.zid;
         float brzinaPozadine, brzinaZida, brzinaBroda;
+        decimal brzinaPrepreke;
         float[] koordPozadina, koordZid;
         bool kretanje, lijevo, desno;
         int bodovi;
@@ -182,8 +184,8 @@ namespace Raketa1
             // Micanje prepreka
             if(lijeviRub)
             {
-                prepreka1.Left -= 2;
-                prepreka2.Left += 2;
+                prepreka1.Left -= (int)brzinaPrepreke;
+                prepreka2.Left += (int)brzinaPrepreke;
                 if(prepreka1.Left < 0 - prepreka1.Width * 0.5)
                 {
                     lijeviRub = false;
@@ -192,8 +194,8 @@ namespace Raketa1
             }
             if(desniRub)
             {
-                prepreka1.Left += 2;
-                prepreka2.Left -= 2;
+                prepreka1.Left += (int)brzinaPrepreke;
+                prepreka2.Left -= (int)brzinaPrepreke;
                 if (prepreka1.Left > sirina - prepreka1.Width * 0.5)
                 {
                     lijeviRub = true;
