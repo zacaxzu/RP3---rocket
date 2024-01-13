@@ -39,6 +39,7 @@
             this.labelaRestartPoruka = new System.Windows.Forms.Label();
             this.labelaPauza = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.labelaTezina = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
@@ -143,12 +144,26 @@
             this.progressBar1.Size = new System.Drawing.Size(100, 23);
             this.progressBar1.TabIndex = 7;
             // 
+            // labelaTezina
+            // 
+            this.labelaTezina.AutoSize = true;
+            this.labelaTezina.BackColor = System.Drawing.Color.Transparent;
+            this.labelaTezina.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelaTezina.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelaTezina.Location = new System.Drawing.Point(261, 409);
+            this.labelaTezina.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelaTezina.Name = "labelaTezina";
+            this.labelaTezina.Size = new System.Drawing.Size(111, 31);
+            this.labelaTezina.TabIndex = 8;
+            this.labelaTezina.Text = "Tezina: \r\n";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
+            this.Controls.Add(this.labelaTezina);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelaPauza);
             this.Controls.Add(this.labelaRestartPoruka);
@@ -164,6 +179,7 @@
             this.Text = "Raketa";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.p);
@@ -187,6 +203,7 @@
         private System.Windows.Forms.Label labelaRestartPoruka;
         private System.Windows.Forms.Label labelaPauza;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label labelaTezina;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

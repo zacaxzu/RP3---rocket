@@ -16,13 +16,9 @@ namespace Raketa1
         {
             InitializeComponent();
         }
-        /*
-        public decimal BrzinaPrepreka
-        {
-            get { return brzinaPrepreke.Value; }
-            set { brzinaPrepreke.Value = value; }
-        }
-        */
+
+        public static int BrzinaPrepreka = 1;
+
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             StartForm formaZaStart = new StartForm();
@@ -34,7 +30,19 @@ namespace Raketa1
 
         private void brzinaPrepreka_ValueChanged(object sender, EventArgs e)
         {
-            //brzinaPrepreke = BrzinaPrepreka.Value;
+            NumericUpDown numericUpDown = (NumericUpDown)sender;
+            BrzinaPrepreka = (int)numericUpDown.Value;
+        }
+
+        private void gumbNazad_MouseClick(object sender, MouseEventArgs e)
+        {
+            BrzinaPrepreka = (int)brzinaPreprekeTezina.Value;
+
+            StartForm formaZaStart = new StartForm();
+            Visible = false;
+            formaZaStart.ShowDialog();
+            Visible = true;
+            Close();
         }
     }
 }

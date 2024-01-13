@@ -53,7 +53,7 @@ namespace Raketa1
             brzinaPozadine = 0.5f;
             brzinaZida = 4;
             brzinaBroda = 5;
-            brzinaPrepreke = 5;
+
             koordPozadina = new float[] { -visina, 0 };
             koordZid = new float[] { -visina, 0 };
             brod.Location = new Point(
@@ -67,10 +67,19 @@ namespace Raketa1
         Image pozadina = Properties.Resources.pozadina;
         Image zid = Properties.Resources.zid;
         float brzinaPozadine, brzinaZida, brzinaBroda;
-        decimal brzinaPrepreke;
+        int brzinaPrepreke;
         float[] koordPozadina, koordZid;
         bool kretanje, lijevo, desno;
         int bodovi;
+
+
+
+        public void TezinaPrepreke(int brzinaPrepreke)
+        {
+            // Do something with the brzinaPrepreke value
+            // For example, update a label or any other UI element
+            labelaTezina.Text = "Tezina: " + brzinaPrepreke;
+        }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
@@ -134,6 +143,11 @@ namespace Raketa1
                     labelaPauza.Visible = false;
                 }
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            labelaTezina.Text = "Tezina: " + Postavke.BrzinaPrepreka;
         }
 
         private void PomakniPozadinu()

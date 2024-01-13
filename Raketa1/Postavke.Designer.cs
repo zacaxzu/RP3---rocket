@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.gumbNazad = new System.Windows.Forms.Button();
-            this.brzinaPrepreka = new System.Windows.Forms.NumericUpDown();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.brzinaPreprekeTezina = new System.Windows.Forms.NumericUpDown();
+            this.brzinaPreprekeText = new System.Windows.Forms.RichTextBox();
             this.izgledKometa = new System.Windows.Forms.TextBox();
             this.izgledBroda = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.brzinaPrepreka)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brzinaPreprekeTezina)).BeginInit();
             this.SuspendLayout();
             // 
             // gumbNazad
@@ -47,41 +47,41 @@
             this.gumbNazad.TabIndex = 0;
             this.gumbNazad.Text = "Nazad";
             this.gumbNazad.UseVisualStyleBackColor = false;
-            this.gumbNazad.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
+            this.gumbNazad.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gumbNazad_MouseClick);
             // 
-            // brzinaPrepreka
+            // brzinaPreprekeTezina
             // 
-            this.brzinaPrepreka.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.brzinaPrepreka.Location = new System.Drawing.Point(189, 131);
-            this.brzinaPrepreka.Maximum = new decimal(new int[] {
+            this.brzinaPreprekeTezina.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.brzinaPreprekeTezina.Location = new System.Drawing.Point(189, 131);
+            this.brzinaPreprekeTezina.Maximum = new decimal(new int[] {
             3,
             0,
             0,
             0});
-            this.brzinaPrepreka.Minimum = new decimal(new int[] {
+            this.brzinaPreprekeTezina.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.brzinaPrepreka.Name = "brzinaPrepreka";
-            this.brzinaPrepreka.Size = new System.Drawing.Size(38, 31);
-            this.brzinaPrepreka.TabIndex = 1;
-            this.brzinaPrepreka.Value = new decimal(new int[] {
+            this.brzinaPreprekeTezina.Name = "brzinaPreprekeTezina";
+            this.brzinaPreprekeTezina.Size = new System.Drawing.Size(38, 31);
+            this.brzinaPreprekeTezina.TabIndex = 1;
+            this.brzinaPreprekeTezina.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.brzinaPrepreka.ValueChanged += new System.EventHandler(this.brzinaPrepreka_ValueChanged);
+            this.brzinaPreprekeTezina.ValueChanged += new System.EventHandler(this.brzinaPrepreka_ValueChanged);
             // 
-            // richTextBox1
+            // brzinaPreprekeText
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.richTextBox1.Location = new System.Drawing.Point(128, 79);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(159, 33);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "Brzina prepreka";
+            this.brzinaPreprekeText.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.brzinaPreprekeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.brzinaPreprekeText.Location = new System.Drawing.Point(128, 79);
+            this.brzinaPreprekeText.Name = "brzinaPreprekeText";
+            this.brzinaPreprekeText.Size = new System.Drawing.Size(159, 33);
+            this.brzinaPreprekeText.TabIndex = 2;
+            this.brzinaPreprekeText.Text = "Brzina prepreka";
             // 
             // izgledKometa
             // 
@@ -107,13 +107,13 @@
             this.ClientSize = new System.Drawing.Size(399, 449);
             this.Controls.Add(this.izgledBroda);
             this.Controls.Add(this.izgledKometa);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.brzinaPrepreka);
+            this.Controls.Add(this.brzinaPreprekeText);
+            this.Controls.Add(this.brzinaPreprekeTezina);
             this.Controls.Add(this.gumbNazad);
             this.Name = "Postavke";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Postavke";
-            ((System.ComponentModel.ISupportInitialize)(this.brzinaPrepreka)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brzinaPreprekeTezina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,8 +122,8 @@
         #endregion
 
         private System.Windows.Forms.Button gumbNazad;
-        private System.Windows.Forms.NumericUpDown brzinaPrepreka;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.NumericUpDown brzinaPreprekeTezina;
+        private System.Windows.Forms.RichTextBox brzinaPreprekeText;
         private System.Windows.Forms.TextBox izgledKometa;
         private System.Windows.Forms.TextBox izgledBroda;
     }
