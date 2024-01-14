@@ -40,6 +40,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.labelaTezina = new System.Windows.Forms.Label();
             this.brod = new System.Windows.Forms.PictureBox();
+            this.labelaBodovi2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
@@ -141,14 +142,13 @@
             this.labelaTezina.Location = new System.Drawing.Point(261, 409);
             this.labelaTezina.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelaTezina.Name = "labelaTezina";
-            this.labelaTezina.Size = new System.Drawing.Size(111, 31);
+            this.labelaTezina.Size = new System.Drawing.Size(0, 31);
             this.labelaTezina.TabIndex = 8;
-            this.labelaTezina.Text = "Tezina: \r\n";
             // 
             // brod
             // 
             this.brod.BackColor = System.Drawing.Color.Transparent;
-            this.brod.Location = new System.Drawing.Point(150, 387);
+            this.brod.Location = new System.Drawing.Point(150, 346);
             this.brod.Margin = new System.Windows.Forms.Padding(2);
             this.brod.Name = "brod";
             this.brod.Size = new System.Drawing.Size(107, 51);
@@ -156,12 +156,25 @@
             this.brod.TabIndex = 0;
             this.brod.TabStop = false;
             // 
+            // labelaBodovi2
+            // 
+            this.labelaBodovi2.AutoSize = true;
+            this.labelaBodovi2.BackColor = System.Drawing.Color.Transparent;
+            this.labelaBodovi2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelaBodovi2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelaBodovi2.Location = new System.Drawing.Point(266, 409);
+            this.labelaBodovi2.Name = "labelaBodovi2";
+            this.labelaBodovi2.Size = new System.Drawing.Size(113, 29);
+            this.labelaBodovi2.TabIndex = 9;
+            this.labelaBodovi2.Text = "Bodovi: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
+            this.Controls.Add(this.labelaBodovi2);
             this.Controls.Add(this.labelaTezina);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelaPauza);
@@ -202,6 +215,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label labelaTezina;
         private System.Windows.Forms.PictureBox brod;
+        private System.Windows.Forms.Label labelaBodovi2;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

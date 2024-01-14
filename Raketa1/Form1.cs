@@ -17,6 +17,7 @@ namespace Raketa1
         float sirina, visina;
         bool lijeviRub;
         bool desniRub;
+        private int zivoti;
         public Form1()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace Raketa1
         private void povecajBodove(int dobiveniBodovi)
         {
             bodovi += dobiveniBodovi;
-            labelaBodovi.Text = labelaBodovi1.Text = "Bodovi: " + bodovi;
+            labelaBodovi.Text = labelaBodovi1.Text = labelaBodovi2.Text = "Bodovi: " + bodovi.ToString("D3"); ;
         }
 
         bool krajIgre;
@@ -54,7 +55,6 @@ namespace Raketa1
             brzinaPozadine = 0.5f;
             brzinaZida = 4;
             brzinaBroda = 5;
-            //public static PictureBox brod;
 
             koordPozadina = new float[] { -visina, 0 };
             koordZid = new float[] { -visina, 0 };
@@ -66,6 +66,8 @@ namespace Raketa1
 
             lijeviRub = true;
             desniRub = false;
+
+            zivoti = 3;
         }
 
         Image pozadina = Properties.Resources.pozadina;
@@ -79,13 +81,6 @@ namespace Raketa1
         bool kretanje, lijevo, desno;
         int bodovi, selectedBrodDesign;
         
-        public void TezinaPrepreke(int brzinaPrepreke)
-        {
-            // Do something with the brzinaPrepreke value
-            // For example, update a label or any other UI element
-            labelaTezina.Text = "Tezina: " + brzinaPrepreke;
-        }
-
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up && kretanje)
@@ -152,7 +147,7 @@ namespace Raketa1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            labelaTezina.Text = "Tezina: " + Postavke.BrzinaPrepreka;
+            labelaTezina.Text = "Bodovi: " + bodovi;
             brzinaPrepreke = Postavke.BrzinaPrepreka;
             selectedBrodDesign = Postavke.SelectedBrodDesign;
 
@@ -311,6 +306,15 @@ namespace Raketa1
                     x.Visible = false;
                     Controls.Remove(Controls[i]);
                     x.Dispose();
+                }
+            }
+            for (int i = Controls.Count - 1; i >= 0; i--)
+            {
+                if (Controls[i] is PictureBox y && (string)y.Tag == "bonusBodovi")
+                {
+                    y.Visible = false;
+                    Controls.Remove(Controls[i]);
+                    y.Dispose();
                 }
             }
         }
