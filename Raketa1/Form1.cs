@@ -17,7 +17,8 @@ namespace Raketa1
         float sirina, visina;
         bool lijeviRub;
         bool desniRub;
-        private int zivoti;
+        bool vecPogoden = false;
+        int zivoti = 3;
         public Form1()
         {
             InitializeComponent();
@@ -29,12 +30,40 @@ namespace Raketa1
 
             labelaBodovi.Parent = prepreka1;
             labelaBodovi1.Parent = prepreka2;
-            labelaBodovi.Location = labelaBodovi1.Location = new Point(4, 4);
+            labelaBodovi.Location = labelaBodovi1.Location = new Point(4, 4);     
         }
         private void povecajBodove(int dobiveniBodovi)
         {
             bodovi += dobiveniBodovi;
             labelaBodovi.Text = labelaBodovi1.Text = labelaBodovi2.Text = "Bodovi: " + bodovi.ToString("D3"); ;
+        }
+
+        private void minusZivoti()
+        {
+            timer1.Stop();
+            zivoti--;
+            labelZivoti.Text = "Zivoti: " + zivoti;
+            if (zivoti <= 0)
+                GameOver();
+            // Iz PocetnePostavke
+            //labelaPauza.Visible = false;
+            krajIgre = false;
+            labelaRestartPoruka.Visible = false;
+            prepreka1.Location = new Point(10, 205);
+            prepreka2.Location = new Point(205, 10);
+
+            lijevo = desno = false;
+            kretanje = false;
+            brzinaPozadine = 0.5f;
+            brzinaZida = 4;
+            brzinaBroda = 5;
+
+            koordPozadina = new float[] { -visina, 0 };
+            koordZid = new float[] { -visina, 0 };
+            lijeviRub = true;
+            desniRub = false;
+
+            timer1.Start();
         }
 
         bool krajIgre;
@@ -66,7 +95,6 @@ namespace Raketa1
 
             lijeviRub = true;
             desniRub = false;
-
             zivoti = 3;
         }
 
@@ -154,17 +182,14 @@ namespace Raketa1
             if (selectedBrodDesign == 1)
             {
                 brod.Image = ufo1;
-                Debug.WriteLine("Prvi ufo izabran!");
             }
             else if (selectedBrodDesign == 2)
             {
                 brod.Image = ufo2;
-                Debug.WriteLine("Drugi ufo izabran!");
             }
             else if (selectedBrodDesign == 3)
             {
                 brod.Image = ufo3;
-                Debug.WriteLine("Treći ufo izabran!");
             }
         }
 
@@ -267,8 +292,10 @@ namespace Raketa1
 
             Invalidate();
             if (brod.Bounds.IntersectsWith(prepreka1.Bounds)
-                || brod.Bounds.IntersectsWith(prepreka2.Bounds)
-                || progressBar1.Value == 0)
+                || brod.Bounds.IntersectsWith(prepreka2.Bounds))
+                minusZivoti();
+
+            if (progressBar1.Value == 0)
                 GameOver();
 
             // Progress bar
@@ -280,13 +307,17 @@ namespace Raketa1
             {
                 progressBar1.Value = Math.Min(progressBar1.Value + 60, 1000);
             }
-
-            foreach(Control kontrola in Controls)
+            
+            foreach (Control kontrola in Controls)
             {
                 if(kontrola is PictureBox x && (string)x.Tag == "komet")
                 {
-                    if (brod.Bounds.IntersectsWith(x.Bounds))
-                        GameOver();
+                    if (brod.Bounds.IntersectsWith(x.Bounds) & !vecPogoden)
+                    {
+                        minusZivoti();
+                        vecPogoden = true;
+                        break;
+                    }
                 }
             }
         }
@@ -317,6 +348,8 @@ namespace Raketa1
                     y.Dispose();
                 }
             }
+
+            PocetnePostavke();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)

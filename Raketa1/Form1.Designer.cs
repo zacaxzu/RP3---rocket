@@ -39,8 +39,9 @@
             this.labelaPauza = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.labelaTezina = new System.Windows.Forms.Label();
-            this.brod = new System.Windows.Forms.PictureBox();
             this.labelaBodovi2 = new System.Windows.Forms.Label();
+            this.labelZivoti = new System.Windows.Forms.Label();
+            this.brod = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
@@ -145,17 +146,6 @@
             this.labelaTezina.Size = new System.Drawing.Size(0, 31);
             this.labelaTezina.TabIndex = 8;
             // 
-            // brod
-            // 
-            this.brod.BackColor = System.Drawing.Color.Transparent;
-            this.brod.Location = new System.Drawing.Point(150, 346);
-            this.brod.Margin = new System.Windows.Forms.Padding(2);
-            this.brod.Name = "brod";
-            this.brod.Size = new System.Drawing.Size(107, 51);
-            this.brod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.brod.TabIndex = 0;
-            this.brod.TabStop = false;
-            // 
             // labelaBodovi2
             // 
             this.labelaBodovi2.AutoSize = true;
@@ -168,12 +158,36 @@
             this.labelaBodovi2.TabIndex = 9;
             this.labelaBodovi2.Text = "Bodovi: 0";
             // 
+            // labelZivoti
+            // 
+            this.labelZivoti.AutoSize = true;
+            this.labelZivoti.BackColor = System.Drawing.Color.Transparent;
+            this.labelZivoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelZivoti.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelZivoti.Location = new System.Drawing.Point(12, 409);
+            this.labelZivoti.Name = "labelZivoti";
+            this.labelZivoti.Size = new System.Drawing.Size(95, 29);
+            this.labelZivoti.TabIndex = 10;
+            this.labelZivoti.Text = "Životi: 3";
+            // 
+            // brod
+            // 
+            this.brod.BackColor = System.Drawing.Color.Transparent;
+            this.brod.Location = new System.Drawing.Point(150, 387);
+            this.brod.Margin = new System.Windows.Forms.Padding(2);
+            this.brod.Name = "brod";
+            this.brod.Size = new System.Drawing.Size(107, 51);
+            this.brod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.brod.TabIndex = 0;
+            this.brod.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
+            this.Controls.Add(this.labelZivoti);
             this.Controls.Add(this.labelaBodovi2);
             this.Controls.Add(this.labelaTezina);
             this.Controls.Add(this.progressBar1);
@@ -214,8 +228,9 @@
         private System.Windows.Forms.Label labelaPauza;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label labelaTezina;
-        private System.Windows.Forms.PictureBox brod;
         private System.Windows.Forms.Label labelaBodovi2;
+        private System.Windows.Forms.Label labelZivoti;
+        private System.Windows.Forms.PictureBox brod;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
