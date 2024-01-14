@@ -32,8 +32,13 @@
             this.brzinaPreprekeTezina = new System.Windows.Forms.NumericUpDown();
             this.brzinaPreprekeText = new System.Windows.Forms.RichTextBox();
             this.izgledKometa = new System.Windows.Forms.TextBox();
-            this.izgledBroda = new System.Windows.Forms.TextBox();
+            this.Brod1 = new System.Windows.Forms.PictureBox();
+            this.Brod2 = new System.Windows.Forms.PictureBox();
+            this.Brod3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.brzinaPreprekeTezina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Brod1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Brod2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Brod3)).BeginInit();
             this.SuspendLayout();
             // 
             // gumbNazad
@@ -85,19 +90,49 @@
             // 
             // izgledKometa
             // 
+            this.izgledKometa.BackColor = System.Drawing.Color.Turquoise;
             this.izgledKometa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.izgledKometa.Location = new System.Drawing.Point(146, 188);
+            this.izgledKometa.Location = new System.Drawing.Point(138, 203);
             this.izgledKometa.Name = "izgledKometa";
-            this.izgledKometa.Size = new System.Drawing.Size(128, 29);
+            this.izgledKometa.Size = new System.Drawing.Size(120, 29);
             this.izgledKometa.TabIndex = 3;
-            this.izgledKometa.Text = "Izgled Kometa";
+            this.izgledKometa.Text = "Izgled Broda";
             // 
-            // izgledBroda
+            // Brod1
             // 
-            this.izgledBroda.Location = new System.Drawing.Point(162, 284);
-            this.izgledBroda.Name = "izgledBroda";
-            this.izgledBroda.Size = new System.Drawing.Size(100, 20);
-            this.izgledBroda.TabIndex = 4;
+            this.Brod1.BackColor = System.Drawing.Color.Transparent;
+            this.Brod1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Brod1.Image = global::Raketa1.Properties.Resources.ufo1_11;
+            this.Brod1.Location = new System.Drawing.Point(26, 264);
+            this.Brod1.Name = "Brod1";
+            this.Brod1.Size = new System.Drawing.Size(151, 65);
+            this.Brod1.TabIndex = 4;
+            this.Brod1.TabStop = false;
+            this.Brod1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Brod1_MouseClick);
+            // 
+            // Brod2
+            // 
+            this.Brod2.BackColor = System.Drawing.Color.Transparent;
+            this.Brod2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Brod2.Image = global::Raketa1.Properties.Resources.ufo2_22;
+            this.Brod2.Location = new System.Drawing.Point(215, 264);
+            this.Brod2.Name = "Brod2";
+            this.Brod2.Size = new System.Drawing.Size(143, 65);
+            this.Brod2.TabIndex = 5;
+            this.Brod2.TabStop = false;
+            this.Brod2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Brod2_MouseClick);
+            // 
+            // Brod3
+            // 
+            this.Brod3.BackColor = System.Drawing.Color.Transparent;
+            this.Brod3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Brod3.Image = global::Raketa1.Properties.Resources.ufo3_3;
+            this.Brod3.Location = new System.Drawing.Point(128, 354);
+            this.Brod3.Name = "Brod3";
+            this.Brod3.Size = new System.Drawing.Size(152, 58);
+            this.Brod3.TabIndex = 6;
+            this.Brod3.TabStop = false;
+            this.Brod3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Brod3_MouseClick);
             // 
             // Postavke
             // 
@@ -105,7 +140,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Raketa1.Properties.Resources.pozadina;
             this.ClientSize = new System.Drawing.Size(399, 449);
-            this.Controls.Add(this.izgledBroda);
+            this.Controls.Add(this.Brod3);
+            this.Controls.Add(this.Brod2);
+            this.Controls.Add(this.Brod1);
             this.Controls.Add(this.izgledKometa);
             this.Controls.Add(this.brzinaPreprekeText);
             this.Controls.Add(this.brzinaPreprekeTezina);
@@ -114,6 +151,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Postavke";
             ((System.ComponentModel.ISupportInitialize)(this.brzinaPreprekeTezina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Brod1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Brod2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Brod3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,6 +165,8 @@
         private System.Windows.Forms.NumericUpDown brzinaPreprekeTezina;
         private System.Windows.Forms.RichTextBox brzinaPreprekeText;
         private System.Windows.Forms.TextBox izgledKometa;
-        private System.Windows.Forms.TextBox izgledBroda;
+        private System.Windows.Forms.PictureBox Brod1;
+        private System.Windows.Forms.PictureBox Brod2;
+        private System.Windows.Forms.PictureBox Brod3;
     }
 }

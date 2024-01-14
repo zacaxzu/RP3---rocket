@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.brod = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelaBodovi = new System.Windows.Forms.Label();
             this.prepreka1 = new System.Windows.Forms.PictureBox();
@@ -40,22 +39,11 @@
             this.labelaPauza = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.labelaTezina = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
+            this.brod = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
             this.SuspendLayout();
-            // 
-            // brod
-            // 
-            this.brod.BackColor = System.Drawing.Color.Transparent;
-            this.brod.Image = global::Raketa1.Properties.Resources.brod;
-            this.brod.Location = new System.Drawing.Point(160, 331);
-            this.brod.Margin = new System.Windows.Forms.Padding(2);
-            this.brod.Name = "brod";
-            this.brod.Size = new System.Drawing.Size(56, 109);
-            this.brod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.brod.TabIndex = 0;
-            this.brod.TabStop = false;
             // 
             // timer1
             // 
@@ -157,6 +145,17 @@
             this.labelaTezina.TabIndex = 8;
             this.labelaTezina.Text = "Tezina: \r\n";
             // 
+            // brod
+            // 
+            this.brod.BackColor = System.Drawing.Color.Transparent;
+            this.brod.Location = new System.Drawing.Point(150, 387);
+            this.brod.Margin = new System.Windows.Forms.Padding(2);
+            this.brod.Name = "brod";
+            this.brod.Size = new System.Drawing.Size(107, 51);
+            this.brod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.brod.TabIndex = 0;
+            this.brod.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,17 +183,15 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.p);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.brod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brod)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox brod;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelaBodovi;
         private System.Windows.Forms.PictureBox prepreka1;
@@ -204,6 +201,7 @@
         private System.Windows.Forms.Label labelaPauza;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label labelaTezina;
+        private System.Windows.Forms.PictureBox brod;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

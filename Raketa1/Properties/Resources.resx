@@ -118,19 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\b.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ufo2-22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ufo2-22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brod" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ufo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ufo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pozadina" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pozadina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ufo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ufo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ufo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ufo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ufo1-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ufo1-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ufo1-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ufo1-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="prepreka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prepreka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ufo3-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ufo3-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

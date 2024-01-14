@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -53,12 +54,15 @@ namespace Raketa1
             brzinaPozadine = 0.5f;
             brzinaZida = 4;
             brzinaBroda = 5;
+            //public static PictureBox brod;
 
             koordPozadina = new float[] { -visina, 0 };
             koordZid = new float[] { -visina, 0 };
+            /*
             brod.Location = new Point(
                 (int)sirina / 2 - brod.Size.Width / 2,
                 (int)visina - brod.Size.Height - 10);
+            */
 
             lijeviRub = true;
             desniRub = false;
@@ -66,19 +70,40 @@ namespace Raketa1
 
         Image pozadina = Properties.Resources.pozadina;
         Image zid = Properties.Resources.zid;
+        Image ufo1 = Properties.Resources.ufo1_11,
+              ufo2 = Properties.Resources.ufo2_22,
+              ufo3 = Properties.Resources.ufo3_3;
         float brzinaPozadine, brzinaZida, brzinaBroda;
         int brzinaPrepreke;
         float[] koordPozadina, koordZid;
         bool kretanje, lijevo, desno;
-        int bodovi;
-
-
-
+        int bodovi, selectedBrodDesign;
+        
         public void TezinaPrepreke(int brzinaPrepreke)
         {
             // Do something with the brzinaPrepreke value
             // For example, update a label or any other UI element
             labelaTezina.Text = "Tezina: " + brzinaPrepreke;
+        }
+
+        public void DesignBroda(int selectedBrodDesign)
+        {
+            Debug.WriteLine($"Ispis: {selectedBrodDesign}");
+            if(selectedBrodDesign == 1)
+            {
+                brod.Image = ufo1;
+                Debug.WriteLine("Prvi ufo izabran!");
+            }
+            else if(selectedBrodDesign == 2)
+            {
+                brod.Image = ufo2;
+                Debug.WriteLine("Drugi ufo izabran!");
+            }
+            else if(selectedBrodDesign == 3)
+            {
+                brod.Image = ufo3;
+                Debug.WriteLine("Treći ufo izabran!");
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -148,7 +173,24 @@ namespace Raketa1
         private void Form1_Load(object sender, EventArgs e)
         {
             labelaTezina.Text = "Tezina: " + Postavke.BrzinaPrepreka;
-            brzinaPrepreke = Postavke.BrzinaPrepreka; 
+            brzinaPrepreke = Postavke.BrzinaPrepreka;
+            selectedBrodDesign = Postavke.SelectedBrodDesign;
+
+            if (selectedBrodDesign == 1)
+            {
+                brod.Image = ufo1;
+                Debug.WriteLine("Prvi ufo izabran!");
+            }
+            else if (selectedBrodDesign == 2)
+            {
+                brod.Image = ufo2;
+                Debug.WriteLine("Drugi ufo izabran!");
+            }
+            else if (selectedBrodDesign == 3)
+            {
+                brod.Image = ufo3;
+                Debug.WriteLine("Treći ufo izabran!");
+            }
         }
 
         private void PomakniPozadinu()
@@ -170,6 +212,8 @@ namespace Raketa1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Debug.WriteLine($"Brod: {brod.Name}");
+
             PomakniPozadinu();
             if (lijevo && !desno &&
                 brod.Left - brzinaBroda >= 0.1 * sirina)
@@ -294,12 +338,8 @@ namespace Raketa1
         private void StvoriKomet()
         {
             PictureBox komet = new PictureBox();
-            Debug.WriteLine("Komet stvoren");
             komet.Size = new Size(20, 20);
             komet.ImageLocation = @"Resources\comet.png";
-            //komet.BackgroundImage = Properties.Resources.comet; // Use the comet.png image
-            //komet.Image = Properties.Resources.comet;
-            //komet.BackgroundImageLayout = ImageLayout.Stretch; // Optional: Stretch the image to fit the PictureBox
             komet.Top = -komet.Height;
             komet.Left = (int)(0.1 * sirina + 1) + random.Next(0, (int)(0.8 * sirina - komet.Width));
             komet.Tag = "komet";
