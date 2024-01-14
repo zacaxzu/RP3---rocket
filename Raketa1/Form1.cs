@@ -43,6 +43,18 @@ namespace Raketa1
             timer1.Stop();
             zivoti--;
             labelZivoti.Text = "Zivoti: " + zivoti;
+            if(zivoti == 2)
+            {
+                srce3.Visible = false;
+            }
+            if(zivoti == 1)
+            {
+                srce2.Visible = false;
+            }
+            if(zivoti == 0)
+            {
+                srce1.Visible = false;
+            }
             if (zivoti <= 0)
                 GameOver();
             // Iz PocetnePostavke
@@ -119,6 +131,9 @@ namespace Raketa1
             lijeviRub = true;
             desniRub = false;
             zivoti = 3;
+            srce1.Visible = true;
+            srce2.Visible = true;
+            srce3.Visible = true;
         }
 
         Image pozadina = Properties.Resources.pozadina;

@@ -43,10 +43,16 @@
             this.labelZivoti = new System.Windows.Forms.Label();
             this.brod = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.srce1 = new System.Windows.Forms.PictureBox();
+            this.srce2 = new System.Windows.Forms.PictureBox();
+            this.srce3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.srce1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.srce2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.srce3)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -175,7 +181,7 @@
             // brod
             // 
             this.brod.BackColor = System.Drawing.Color.Transparent;
-            this.brod.Location = new System.Drawing.Point(143, 342);
+            this.brod.Location = new System.Drawing.Point(145, 342);
             this.brod.Margin = new System.Windows.Forms.Padding(2);
             this.brod.Name = "brod";
             this.brod.Size = new System.Drawing.Size(107, 51);
@@ -193,13 +199,45 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // srce1
+            // 
+            this.srce1.BackColor = System.Drawing.Color.Black;
+            this.srce1.Image = global::Raketa1.Properties.Resources.srce_1;
+            this.srce1.Location = new System.Drawing.Point(9, 401);
+            this.srce1.Name = "srce1";
+            this.srce1.Size = new System.Drawing.Size(43, 39);
+            this.srce1.TabIndex = 12;
+            this.srce1.TabStop = false;
+            // 
+            // srce2
+            // 
+            this.srce2.BackColor = System.Drawing.Color.Black;
+            this.srce2.Image = global::Raketa1.Properties.Resources.srce_1;
+            this.srce2.Location = new System.Drawing.Point(58, 401);
+            this.srce2.Name = "srce2";
+            this.srce2.Size = new System.Drawing.Size(43, 39);
+            this.srce2.TabIndex = 13;
+            this.srce2.TabStop = false;
+            // 
+            // srce3
+            // 
+            this.srce3.BackColor = System.Drawing.Color.Black;
+            this.srce3.Image = global::Raketa1.Properties.Resources.srce_1;
+            this.srce3.Location = new System.Drawing.Point(110, 401);
+            this.srce3.Name = "srce3";
+            this.srce3.Size = new System.Drawing.Size(43, 39);
+            this.srce3.TabIndex = 14;
+            this.srce3.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
-            this.Controls.Add(this.labelZivoti);
+            this.Controls.Add(this.srce3);
+            this.Controls.Add(this.srce2);
+            this.Controls.Add(this.srce1);
             this.Controls.Add(this.labelaBodovi2);
             this.Controls.Add(this.labelaTezina);
             this.Controls.Add(this.progressBar1);
@@ -211,6 +249,7 @@
             this.Controls.Add(this.prepreka1);
             this.Controls.Add(this.brod);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelZivoti);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -227,6 +266,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.srce1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.srce2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.srce3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +288,9 @@
         private System.Windows.Forms.Label labelZivoti;
         private System.Windows.Forms.PictureBox brod;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox srce1;
+        private System.Windows.Forms.PictureBox srce2;
+        private System.Windows.Forms.PictureBox srce3;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
