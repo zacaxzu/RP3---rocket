@@ -66,6 +66,29 @@ namespace Raketa1
             timer1.Start();
         }
 
+        private void resetNakonKilla()
+        {
+            timer1.Stop();
+            krajIgre = false;
+            labelaRestartPoruka.Visible = false;
+            prepreka1.Location = new Point(10, 205);
+            prepreka2.Location = new Point(205, 10);
+
+            lijevo = desno = false;
+            kretanje = false;
+            brzinaPozadine = 0.5f;
+            brzinaZida = 4;
+            brzinaBroda = 5;
+
+            koordPozadina = new float[] { -visina, 0 };
+            koordZid = new float[] { -visina, 0 };
+            lijeviRub = true;
+            desniRub = false;
+            vecPogoden = false;
+
+            timer1.Start();
+        }
+
         bool krajIgre;
         private void PocetnePostavke()
         {
@@ -319,6 +342,29 @@ namespace Raketa1
                         break;
                     }
                 }
+            }
+            if (vecPogoden) 
+            {
+                resetNakonKilla();
+                for (int i = Controls.Count - 1; i >= 0; i--)
+                {
+                    if (Controls[i] is PictureBox x && (string)x.Tag == "komet")
+                    {
+                        x.Visible = false;
+                        Controls.Remove(Controls[i]);
+                        x.Dispose();
+                    }
+                }
+                for (int i = Controls.Count - 1; i >= 0; i--)
+                {
+                    if (Controls[i] is PictureBox y && (string)y.Tag == "bonusBodovi")
+                    {
+                        y.Visible = false;
+                        Controls.Remove(Controls[i]);
+                        y.Dispose();
+                    }
+                }
+
             }
         }
 
