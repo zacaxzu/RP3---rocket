@@ -42,9 +42,11 @@
             this.labelaBodovi2 = new System.Windows.Forms.Label();
             this.labelZivoti = new System.Windows.Forms.Label();
             this.brod = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -149,37 +151,47 @@
             // labelaBodovi2
             // 
             this.labelaBodovi2.AutoSize = true;
-            this.labelaBodovi2.BackColor = System.Drawing.Color.Transparent;
-            this.labelaBodovi2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelaBodovi2.BackColor = System.Drawing.Color.Black;
+            this.labelaBodovi2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelaBodovi2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelaBodovi2.Location = new System.Drawing.Point(266, 409);
+            this.labelaBodovi2.Location = new System.Drawing.Point(235, 409);
             this.labelaBodovi2.Name = "labelaBodovi2";
-            this.labelaBodovi2.Size = new System.Drawing.Size(113, 29);
+            this.labelaBodovi2.Size = new System.Drawing.Size(127, 31);
             this.labelaBodovi2.TabIndex = 9;
             this.labelaBodovi2.Text = "Bodovi: 0";
             // 
             // labelZivoti
             // 
             this.labelZivoti.AutoSize = true;
-            this.labelZivoti.BackColor = System.Drawing.Color.Transparent;
-            this.labelZivoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelZivoti.BackColor = System.Drawing.Color.Black;
+            this.labelZivoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelZivoti.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelZivoti.Location = new System.Drawing.Point(12, 409);
             this.labelZivoti.Name = "labelZivoti";
-            this.labelZivoti.Size = new System.Drawing.Size(95, 29);
+            this.labelZivoti.Size = new System.Drawing.Size(110, 31);
             this.labelZivoti.TabIndex = 10;
             this.labelZivoti.Text = "Životi: 3";
             // 
             // brod
             // 
             this.brod.BackColor = System.Drawing.Color.Transparent;
-            this.brod.Location = new System.Drawing.Point(150, 387);
+            this.brod.Location = new System.Drawing.Point(143, 342);
             this.brod.Margin = new System.Windows.Forms.Padding(2);
             this.brod.Name = "brod";
             this.brod.Size = new System.Drawing.Size(107, 51);
             this.brod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.brod.TabIndex = 0;
             this.brod.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 398);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(399, 51);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -198,6 +210,7 @@
             this.Controls.Add(this.prepreka2);
             this.Controls.Add(this.prepreka1);
             this.Controls.Add(this.brod);
+            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -213,6 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +245,7 @@
         private System.Windows.Forms.Label labelaBodovi2;
         private System.Windows.Forms.Label labelZivoti;
         private System.Windows.Forms.PictureBox brod;
+        private System.Windows.Forms.PictureBox pictureBox1;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
