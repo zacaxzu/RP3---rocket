@@ -86,26 +86,6 @@ namespace Raketa1
             labelaTezina.Text = "Tezina: " + brzinaPrepreke;
         }
 
-        public void DesignBroda(int selectedBrodDesign)
-        {
-            Debug.WriteLine($"Ispis: {selectedBrodDesign}");
-            if(selectedBrodDesign == 1)
-            {
-                brod.Image = ufo1;
-                Debug.WriteLine("Prvi ufo izabran!");
-            }
-            else if(selectedBrodDesign == 2)
-            {
-                brod.Image = ufo2;
-                Debug.WriteLine("Drugi ufo izabran!");
-            }
-            else if(selectedBrodDesign == 3)
-            {
-                brod.Image = ufo3;
-                Debug.WriteLine("Treći ufo izabran!");
-            }
-        }
-
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up && kretanje)
@@ -212,8 +192,6 @@ namespace Raketa1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Debug.WriteLine($"Brod: {brod.Name}");
-
             PomakniPozadinu();
             if (lijevo && !desno &&
                 brod.Left - brzinaBroda >= 0.1 * sirina)
@@ -239,9 +217,11 @@ namespace Raketa1
             progressBar1.Value -= 1;
             if (random.Next() % 100 == 0)
                 StvoriKomet();
+            if (random.Next() % 100 == 0)
+                StvoriBonusBodove();
 
             // Micanje prepreka
-            if(lijeviRub)
+            if (lijeviRub)
             {
                 prepreka1.Left -= (int)brzinaPrepreke;
                 prepreka2.Left += (int)brzinaPrepreke;
@@ -273,6 +253,21 @@ namespace Raketa1
                         x.Dispose();
                     }
                 }
+                if (kontrola is PictureBox y && (string)y.Tag == "bonusBodovi")
+                {
+                    y.Top += (int)(kretanje ? (brzinaZida + brzinaBroda) : brzinaZida);
+                    if (brod.Bounds.IntersectsWith(y.Bounds))
+                    {
+                        povecajBodove(5);
+                        Controls.Remove(kontrola);
+                        y.Dispose();
+                    }
+                    if (y.Top > visina)
+                    {
+                        Controls.Remove(kontrola);
+                        y.Dispose();
+                    }
+                }
             }
 
             Invalidate();
@@ -280,7 +275,8 @@ namespace Raketa1
                 || brod.Bounds.IntersectsWith(prepreka2.Bounds)
                 || progressBar1.Value == 0)
                 GameOver();
-            
+
+            // Progress bar
             if(prepreka1.Top > visina)
             {   
                 progressBar1.Value = Math.Min(progressBar1.Value + 60, 1000);
@@ -289,6 +285,7 @@ namespace Raketa1
             {
                 progressBar1.Value = Math.Min(progressBar1.Value + 60, 1000);
             }
+
             foreach(Control kontrola in Controls)
             {
                 if(kontrola is PictureBox x && (string)x.Tag == "komet")
@@ -345,6 +342,20 @@ namespace Raketa1
             komet.Tag = "komet";
             Controls.Add(komet);
             komet.BringToFront();
+        }
+
+        private void StvoriBonusBodove()
+        {
+            PictureBox bonusBodovi = new PictureBox();
+            bonusBodovi.Size = new Size(20, 20);
+            bonusBodovi.BackColor = Color.LightSalmon;
+            bonusBodovi.BorderStyle = BorderStyle.FixedSingle;
+            bonusBodovi.Top = -bonusBodovi.Height;
+            bonusBodovi.Left = (int)(0.1 * sirina + 1)
+                + random.Next(0, (int)(0.8 * sirina - bonusBodovi.Width));
+            bonusBodovi.Tag = "bonusBodovi";
+            Controls.Add(bonusBodovi);
+            bonusBodovi.BringToFront();
         }
     }
 }
