@@ -40,7 +40,7 @@ namespace Raketa1
 
         private void minusZivoti()
         {
-            timer1.Stop();
+            //timer1.Stop();
             zivoti--;
             labelZivoti.Text = "Zivoti: " + zivoti;
             if(zivoti == 2)
@@ -55,8 +55,6 @@ namespace Raketa1
             {
                 srce1.Visible = false;
             }
-            if (zivoti <= 0)
-                GameOver();
             // Iz PocetnePostavke
             //labelaPauza.Visible = false;
             krajIgre = false;
@@ -75,7 +73,9 @@ namespace Raketa1
             lijeviRub = true;
             desniRub = false;
 
-            timer1.Start();
+            if (zivoti <= 0)
+                GameOver();
+            //timer1.Start();
         }
 
         private void resetNakonKilla()
@@ -185,6 +185,15 @@ namespace Raketa1
                     labelaPauza.Visible = false;
                 }
             }
+            /*
+            if (e.KeyCode == Keys.R && krajIgre)
+            {
+                Debug.WriteLine(krajIgre);
+                labelaPauza.Visible = false;
+                PocetnePostavke(); // Restart the game
+                timer1.Start();
+            }
+            */
         }
 
         private void Form1_Activated(object sender, EventArgs e)
@@ -206,26 +215,7 @@ namespace Raketa1
                 labelaPauza.Visible = true;
             }
         }
-        /*
-        private void p(object sender, KeyPressEventArgs e)
-        {
-            if (!krajIgre)
-            {
-                if(labelaPauza.Visible == false)
-                {
-                    timer1.Stop();
-                    if (kretanje)
-                        kretanje = false;
-                    labelaPauza.Visible = true;
-                }
-                else
-                {
-                    timer1.Start();
-                    labelaPauza.Visible = false;
-                }
-            }
-        }
-        */
+
         private void Form1_Load(object sender, EventArgs e)
         {
             labelaTezina.Text = "Bodovi: " + bodovi;
@@ -403,9 +393,10 @@ namespace Raketa1
             timer1.Stop();
             krajIgre = true;
             labelaRestartPoruka.Visible = true;
+            
             MessageBox.Show("Osvojeni bodovi: "
                 + bodovi, "Igra je završila!");
-
+            
             for(int i = Controls.Count - 1; i >= 0; i--)
             {
                 if (Controls[i] is PictureBox x && (string)x.Tag == "komet")
@@ -425,7 +416,8 @@ namespace Raketa1
                 }
             }
 
-            PocetnePostavke();
+            //PocetnePostavke();
+            //timer1.Start();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -470,6 +462,7 @@ namespace Raketa1
             Controls.Add(bonusBodovi);
             bonusBodovi.BringToFront();
         }
+
         private void StvoriProjektil()
         {
             PictureBox projektil = new PictureBox();
