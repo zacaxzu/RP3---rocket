@@ -34,7 +34,6 @@
             this.labelaBodovi = new System.Windows.Forms.Label();
             this.prepreka1 = new System.Windows.Forms.PictureBox();
             this.prepreka2 = new System.Windows.Forms.PictureBox();
-            this.labelaBodovi1 = new System.Windows.Forms.Label();
             this.labelaRestartPoruka = new System.Windows.Forms.Label();
             this.labelaPauza = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -46,6 +45,7 @@
             this.srce1 = new System.Windows.Forms.PictureBox();
             this.srce2 = new System.Windows.Forms.PictureBox();
             this.srce3 = new System.Windows.Forms.PictureBox();
+            this.preprekaJacina1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
@@ -66,7 +66,7 @@
             this.labelaBodovi.BackColor = System.Drawing.Color.Transparent;
             this.labelaBodovi.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelaBodovi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelaBodovi.Location = new System.Drawing.Point(221, 20);
+            this.labelaBodovi.Location = new System.Drawing.Point(26, 222);
             this.labelaBodovi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelaBodovi.Name = "labelaBodovi";
             this.labelaBodovi.Size = new System.Drawing.Size(127, 31);
@@ -94,19 +94,6 @@
             this.prepreka2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.prepreka2.TabIndex = 3;
             this.prepreka2.TabStop = false;
-            // 
-            // labelaBodovi1
-            // 
-            this.labelaBodovi1.AutoSize = true;
-            this.labelaBodovi1.BackColor = System.Drawing.Color.Transparent;
-            this.labelaBodovi1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaBodovi1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelaBodovi1.Location = new System.Drawing.Point(11, 222);
-            this.labelaBodovi1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelaBodovi1.Name = "labelaBodovi1";
-            this.labelaBodovi1.Size = new System.Drawing.Size(127, 31);
-            this.labelaBodovi1.TabIndex = 4;
-            this.labelaBodovi1.Text = "Bodovi: 0";
             // 
             // labelaRestartPoruka
             // 
@@ -229,12 +216,20 @@
             this.srce3.TabIndex = 14;
             this.srce3.TabStop = false;
             // 
+            // preprekaJacina1
+            // 
+            this.preprekaJacina1.Location = new System.Drawing.Point(219, 20);
+            this.preprekaJacina1.Name = "preprekaJacina1";
+            this.preprekaJacina1.Size = new System.Drawing.Size(156, 23);
+            this.preprekaJacina1.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
+            this.Controls.Add(this.preprekaJacina1);
             this.Controls.Add(this.srce3);
             this.Controls.Add(this.srce2);
             this.Controls.Add(this.srce1);
@@ -243,7 +238,6 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelaPauza);
             this.Controls.Add(this.labelaRestartPoruka);
-            this.Controls.Add(this.labelaBodovi1);
             this.Controls.Add(this.labelaBodovi);
             this.Controls.Add(this.prepreka2);
             this.Controls.Add(this.prepreka1);
@@ -260,7 +254,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            //this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.p);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).EndInit();
@@ -279,7 +272,6 @@
         private System.Windows.Forms.Label labelaBodovi;
         private System.Windows.Forms.PictureBox prepreka1;
         private System.Windows.Forms.PictureBox prepreka2;
-        private System.Windows.Forms.Label labelaBodovi1;
         private System.Windows.Forms.Label labelaRestartPoruka;
         private System.Windows.Forms.Label labelaPauza;
         private System.Windows.Forms.ProgressBar progressBar1;
@@ -291,6 +283,7 @@
         private System.Windows.Forms.PictureBox srce1;
         private System.Windows.Forms.PictureBox srce2;
         private System.Windows.Forms.PictureBox srce3;
+        private System.Windows.Forms.ProgressBar preprekaJacina1;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

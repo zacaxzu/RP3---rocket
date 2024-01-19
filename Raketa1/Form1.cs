@@ -29,13 +29,17 @@ namespace Raketa1
             DoubleBuffered = true;
 
             labelaBodovi.Parent = prepreka1;
-            labelaBodovi1.Parent = prepreka2;
-            labelaBodovi.Location = labelaBodovi1.Location = new Point(4, 4);     
+            preprekaJacina1.Parent = prepreka1;
+            //labelaBodovi1.Parent = prepreka2;
+            labelaBodovi.Location = new Point(4, 4);    
+            preprekaJacina1.Location = new Point(4, 4);
+            //labelaBodovi.Location = labelaBodovi1.Location = new Point(4, 4);     
         }
         private void povecajBodove(int dobiveniBodovi)
         {
             bodovi += dobiveniBodovi;
-            labelaBodovi.Text = labelaBodovi1.Text = labelaBodovi2.Text = "Bodovi: " + bodovi.ToString("D3"); ;
+            labelaBodovi.Text = labelaBodovi2.Text = "Bodovi: " + bodovi.ToString("D3"); ;
+            //labelaBodovi.Text = labelaBodovi1.Text = labelaBodovi2.Text = "Bodovi: " + bodovi.ToString("D3"); ;
         }
 
         private void minusZivoti()
@@ -273,6 +277,7 @@ namespace Raketa1
                     prepreka2.Top = -prepreka2.Height;
                 }
             }
+            //preprekaJacina1.Value = 100;
             progressBar1.Value -= 1;
             if (random.Next() % 100 == 0)
                 StvoriKomet();
@@ -358,7 +363,40 @@ namespace Raketa1
                         break;
                     }
                 }
+                if (kontrola is PictureBox y && (string)y.Tag == "projektil")
+                {
+                    // Move the projectile from bottom to top
+                    y.Top -= (int)brzinaBroda;
+
+                    // Check if the projectile is out of bounds
+                    if (y.Top + y.Height < 0)
+                    {
+                        Controls.Remove(y);
+                        y.Dispose();
+                    }
+                    if (prepreka1.Bounds.IntersectsWith(y.Bounds) || prepreka2.Bounds.IntersectsWith(y.Bounds))
+                    {
+                        Controls.Remove(y);
+                        y.Dispose();
+                    }
+                }
+                if (kontrola is PictureBox komet && (string)komet.Tag == "komet")
+                {
+                    foreach (Control kontrola2 in Controls)
+                    {
+                        if (kontrola2 is PictureBox projektil && (string)projektil.Tag == "projektil" && komet.Bounds.IntersectsWith(projektil.Bounds))
+                        {
+                            // If komet and projektil intersect, remove both
+                            Controls.Remove(komet);
+                            komet.Dispose();
+
+                            Controls.Remove(projektil);
+                            projektil.Dispose();
+                        }
+                    }
+                }
             }
+            /*
             foreach (Control kontrola in Controls)
             {
                 if (kontrola is PictureBox x && (string)x.Tag == "projektil")
@@ -381,6 +419,7 @@ namespace Raketa1
 
                 // ... your existing code ...
             }
+            */
             if (vecPogoden) 
             {
                 resetNakonKilla();
