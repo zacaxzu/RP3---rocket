@@ -170,6 +170,21 @@ namespace Raketa1
                 lijevo = true;
             if (e.KeyCode == Keys.Right)
                 desno = true;
+            if (e.KeyCode == Keys.P && !krajIgre)
+            {
+                if (!labelaPauza.Visible)
+                {
+                    timer1.Stop();
+                    if (kretanje)
+                        kretanje = false;
+                    labelaPauza.Visible = true;
+                }
+                else
+                {
+                    timer1.Start();
+                    labelaPauza.Visible = false;
+                }
+            }
         }
 
         private void Form1_Activated(object sender, EventArgs e)
@@ -191,7 +206,7 @@ namespace Raketa1
                 labelaPauza.Visible = true;
             }
         }
-
+        /*
         private void p(object sender, KeyPressEventArgs e)
         {
             if (!krajIgre)
@@ -210,7 +225,7 @@ namespace Raketa1
                 }
             }
         }
-
+        */
         private void Form1_Load(object sender, EventArgs e)
         {
             labelaTezina.Text = "Bodovi: " + bodovi;
@@ -454,6 +469,19 @@ namespace Raketa1
             bonusBodovi.Tag = "bonusBodovi";
             Controls.Add(bonusBodovi);
             bonusBodovi.BringToFront();
+        }
+        private void StvoriProjektil()
+        {
+            PictureBox projektil = new PictureBox();
+            projektil.Size = new Size(20, 20);
+            projektil.BackColor = Color.AliceBlue;
+            projektil.BorderStyle = BorderStyle.FixedSingle;
+            projektil.Top = +projektil.Height;
+            projektil.Left = (int)(0.1 * sirina + 1)
+                + random.Next(0, (int)(0.8 * sirina - projektil.Width));
+            projektil.Tag = "projektil";
+            Controls.Add(projektil);
+            projektil.BringToFront();
         }
     }
 }
