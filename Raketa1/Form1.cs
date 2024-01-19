@@ -372,6 +372,11 @@ namespace Raketa1
                         Controls.Remove(x);
                         x.Dispose();
                     }
+                    if (prepreka1.Bounds.IntersectsWith(x.Bounds) || prepreka2.Bounds.IntersectsWith(x.Bounds))
+                    {
+                        Controls.Remove(x);
+                        x.Dispose();
+                    }
                 }
 
                 // ... your existing code ...
