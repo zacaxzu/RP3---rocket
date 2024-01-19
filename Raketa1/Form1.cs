@@ -185,15 +185,11 @@ namespace Raketa1
                     labelaPauza.Visible = false;
                 }
             }
-            /*
-            if (e.KeyCode == Keys.R && krajIgre)
+            if (e.KeyCode == Keys.Space)
             {
-                Debug.WriteLine(krajIgre);
-                labelaPauza.Visible = false;
-                PocetnePostavke(); // Restart the game
-                timer1.Start();
+                StvoriProjektil();
             }
-            */
+            
         }
 
         private void Form1_Activated(object sender, EventArgs e)
@@ -363,6 +359,23 @@ namespace Raketa1
                     }
                 }
             }
+            foreach (Control kontrola in Controls)
+            {
+                if (kontrola is PictureBox x && (string)x.Tag == "projektil")
+                {
+                    // Move the projectile from bottom to top
+                    x.Top -= (int)brzinaBroda;
+
+                    // Check if the projectile is out of bounds
+                    if (x.Top + x.Height < 0)
+                    {
+                        Controls.Remove(x);
+                        x.Dispose();
+                    }
+                }
+
+                // ... your existing code ...
+            }
             if (vecPogoden) 
             {
                 resetNakonKilla();
@@ -413,6 +426,15 @@ namespace Raketa1
                     y.Visible = false;
                     Controls.Remove(Controls[i]);
                     y.Dispose();
+                }
+            }
+            for (int i = Controls.Count - 1; i >= 0; i--)
+            {
+                if (Controls[i] is PictureBox x && (string)x.Tag == "projektil")
+                {
+                    x.Visible = false;
+                    Controls.Remove(Controls[i]);
+                    x.Dispose();
                 }
             }
 
@@ -469,9 +491,11 @@ namespace Raketa1
             projektil.Size = new Size(20, 20);
             projektil.BackColor = Color.AliceBlue;
             projektil.BorderStyle = BorderStyle.FixedSingle;
-            projektil.Top = +projektil.Height;
-            projektil.Left = (int)(0.1 * sirina + 1)
-                + random.Next(0, (int)(0.8 * sirina - projektil.Width));
+
+            // Set the initial position to be just above the brod
+            projektil.Top = brod.Top - projektil.Height;
+            projektil.Left = brod.Left + brod.Width / 2 - projektil.Width / 2;
+
             projektil.Tag = "projektil";
             Controls.Add(projektil);
             projektil.BringToFront();
