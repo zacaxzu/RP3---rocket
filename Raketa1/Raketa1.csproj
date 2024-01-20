@@ -121,6 +121,7 @@
     </Content>
     <None Include="Resources\ufo1-1.png" />
     <None Include="Resources\srce-1.png" />
+    <None Include="Resources\pozadina.jpg" />
     <Content Include="Resources\ufo1.png" />
     <None Include="Resources\ufo2-22.png" />
     <Content Include="Resources\ufo2.png" />

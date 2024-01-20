@@ -222,6 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
+            this.BackgroundImage = global::Raketa1.Properties.Resources.pozadina1;
             this.ClientSize = new System.Drawing.Size(399, 449);
             this.Controls.Add(this.preprekaJacina2);
             this.Controls.Add(this.preprekaJacina1);

@@ -80,7 +80,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 38F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.BackgroundImage = global::Raketa1.Properties.Resources.pozadina;
+            this.BackgroundImage = global::Raketa1.Properties.Resources.pozadina1;
             this.ClientSize = new System.Drawing.Size(399, 449);
             this.Controls.Add(this.gumbPostavke);
             this.Controls.Add(this.gumbZatvori);

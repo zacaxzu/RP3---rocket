@@ -387,7 +387,7 @@ namespace Raketa1
                     {
                         if (preprekaJacina1.Value > 0)
                         {
-                            preprekaJacina1.Value -= 10;
+                            preprekaJacina1.Value -= 20;
                             Controls.Remove(y);
                             y.Dispose();
                         }
@@ -404,7 +404,7 @@ namespace Raketa1
                     {
                         if (preprekaJacina2.Value > 0)
                         {
-                            preprekaJacina2.Value -= 10;
+                            preprekaJacina2.Value -= 20;
                             Controls.Remove(y);
                             y.Dispose();
                         }
@@ -425,6 +425,8 @@ namespace Raketa1
                         if (kontrola2 is PictureBox projektil && (string)projektil.Tag == "projektil" && komet.Bounds.IntersectsWith(projektil.Bounds))
                         {
                             // If komet and projektil intersect, remove both
+                            povecajBodove(2);
+
                             Controls.Remove(komet);
                             komet.Dispose();
 
@@ -544,9 +546,10 @@ namespace Raketa1
         private void StvoriKomet()
         {
             PictureBox komet = new PictureBox();
-            komet.Size = new Size(20, 20);
+            komet.Size = new Size(25, 35);
             komet.ImageLocation = @"Resources\comet.png";
             komet.BackColor = Color.Transparent;
+            komet.SizeMode = PictureBoxSizeMode.StretchImage;
             komet.Top = -komet.Height;
             komet.Left = (int)(0.1 * sirina + 1) + random.Next(0, (int)(0.8 * sirina - komet.Width));
             komet.Tag = "komet";
