@@ -154,7 +154,8 @@ namespace Raketa1
         float[] koordPozadina, koordZid;
         bool kretanje, lijevo, desno;
         int bodovi, selectedBrodDesign;
-        
+        private DateTime lastProjektilTime = DateTime.MinValue;
+
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up && kretanje)
@@ -569,18 +570,24 @@ namespace Raketa1
 
         private void StvoriProjektil()
         {
-            PictureBox projektil = new PictureBox();
-            projektil.Size = new Size(20, 20);
-            projektil.BackColor = Color.AliceBlue;
-            projektil.BorderStyle = BorderStyle.FixedSingle;
+            TimeSpan elapsed = DateTime.Now - lastProjektilTime;
+            if (elapsed.TotalSeconds >= 1)
+            {
+                PictureBox projektil = new PictureBox();
+                projektil.Size = new Size(20, 20);
+                projektil.BackColor = Color.AliceBlue;
+                projektil.BorderStyle = BorderStyle.FixedSingle;
 
-            // Set the initial position to be just above the brod
-            projektil.Top = brod.Top - projektil.Height;
-            projektil.Left = brod.Left + brod.Width / 2 - projektil.Width / 2;
+                // Set the initial position to be just above the brod
+                projektil.Top = brod.Top - projektil.Height;
+                projektil.Left = brod.Left + brod.Width / 2 - projektil.Width / 2;
 
-            projektil.Tag = "projektil";
-            Controls.Add(projektil);
-            projektil.BringToFront();
+                projektil.Tag = "projektil";
+                Controls.Add(projektil);
+                projektil.BringToFront();
+
+                lastProjektilTime = DateTime.Now;
+            }
         }
     }
 }
