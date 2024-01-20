@@ -40,7 +40,7 @@
             this.labelaBodovi2 = new System.Windows.Forms.Label();
             this.labelZivoti = new System.Windows.Forms.Label();
             this.brod = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.trakaZaStanje = new System.Windows.Forms.PictureBox();
             this.srce1 = new System.Windows.Forms.PictureBox();
             this.srce2 = new System.Windows.Forms.PictureBox();
             this.srce3 = new System.Windows.Forms.PictureBox();
@@ -49,7 +49,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trakaZaStanje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.srce1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.srce2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.srce3)).BeginInit();
@@ -163,15 +163,15 @@
             this.brod.TabIndex = 0;
             this.brod.TabStop = false;
             // 
-            // pictureBox1
+            // trakaZaStanje
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 398);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 51);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.trakaZaStanje.BackColor = System.Drawing.Color.Black;
+            this.trakaZaStanje.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.trakaZaStanje.Location = new System.Drawing.Point(0, 398);
+            this.trakaZaStanje.Name = "trakaZaStanje";
+            this.trakaZaStanje.Size = new System.Drawing.Size(399, 51);
+            this.trakaZaStanje.TabIndex = 11;
+            this.trakaZaStanje.TabStop = false;
             // 
             // srce1
             // 
@@ -233,11 +233,11 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelaPauza);
             this.Controls.Add(this.labelaRestartPoruka);
-            this.Controls.Add(this.prepreka2);
-            this.Controls.Add(this.prepreka1);
             this.Controls.Add(this.brod);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.trakaZaStanje);
             this.Controls.Add(this.labelZivoti);
+            this.Controls.Add(this.prepreka1);
+            this.Controls.Add(this.prepreka2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -252,7 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trakaZaStanje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.srce1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.srce2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.srce3)).EndInit();
@@ -272,7 +272,7 @@
         private System.Windows.Forms.Label labelaBodovi2;
         private System.Windows.Forms.Label labelZivoti;
         private System.Windows.Forms.PictureBox brod;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox trakaZaStanje;
         private System.Windows.Forms.PictureBox srce1;
         private System.Windows.Forms.PictureBox srce2;
         private System.Windows.Forms.PictureBox srce3;

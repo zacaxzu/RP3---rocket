@@ -319,7 +319,7 @@ namespace Raketa1
                 if(kontrola is PictureBox x && (string)x.Tag == "komet")
                 {
                     x.Top += (int)(kretanje ? (brzinaZida + brzinaBroda) : brzinaZida);
-                    if(x.Top > visina)
+                    if(x.Top >= trakaZaStanje.Top - 20)
                     {
                         Controls.Remove(kontrola);
                         x.Dispose();
@@ -334,7 +334,7 @@ namespace Raketa1
                         Controls.Remove(kontrola);
                         y.Dispose();
                     }
-                    if (y.Top > visina)
+                    if (y.Top > trakaZaStanje.Top - 20)
                     {
                         Controls.Remove(kontrola);
                         y.Dispose();
@@ -545,6 +545,7 @@ namespace Raketa1
             PictureBox komet = new PictureBox();
             komet.Size = new Size(20, 20);
             komet.ImageLocation = @"Resources\comet.png";
+            komet.BackColor = Color.Transparent;
             komet.Top = -komet.Height;
             komet.Left = (int)(0.1 * sirina + 1) + random.Next(0, (int)(0.8 * sirina - komet.Width));
             komet.Tag = "komet";
