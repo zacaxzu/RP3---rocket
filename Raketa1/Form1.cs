@@ -19,6 +19,7 @@ namespace Raketa1
         bool desniRub;
         bool vecPogoden = false;
         int zivoti = 3;
+        bool unistenaPrepreka1 = false, unistenaPrepreka2 = false;
         public Form1()
         {
             InitializeComponent();
@@ -28,17 +29,18 @@ namespace Raketa1
             timer1.Start();
             DoubleBuffered = true;
 
-            labelaBodovi.Parent = prepreka1;
+            //labelaBodovi.Parent = prepreka1;
             preprekaJacina1.Parent = prepreka1;
+            preprekaJacina2.Parent = prepreka2;
             //labelaBodovi1.Parent = prepreka2;
-            labelaBodovi.Location = new Point(4, 4);    
-            preprekaJacina1.Location = new Point(4, 4);
+            //labelaBodovi.Location = new Point(4, 4);    
+            preprekaJacina1.Location = preprekaJacina2.Location = new Point(4, 4);
             //labelaBodovi.Location = labelaBodovi1.Location = new Point(4, 4);     
         }
         private void povecajBodove(int dobiveniBodovi)
         {
             bodovi += dobiveniBodovi;
-            labelaBodovi.Text = labelaBodovi2.Text = "Bodovi: " + bodovi.ToString("D3"); ;
+            labelaBodovi2.Text = "Bodovi: " + bodovi.ToString("D3"); ;
             //labelaBodovi.Text = labelaBodovi1.Text = labelaBodovi2.Text = "Bodovi: " + bodovi.ToString("D3"); ;
         }
 
@@ -109,6 +111,8 @@ namespace Raketa1
         private void PocetnePostavke()
         {
             progressBar1.Value = 1000;
+            preprekaJacina1.Value = 100;
+            preprekaJacina2.Value = 100;
 
             labelaPauza.Visible = false;
             krajIgre = false;
@@ -270,11 +274,15 @@ namespace Raketa1
                 {
                     povecajBodove(1);
                     prepreka1.Top = -prepreka1.Height;
+                    unistenaPrepreka1 = false;
+                    preprekaJacina1.Value = 100;
                 }
                 if (prepreka2.Top > visina)
                 {
                     povecajBodove(1);
                     prepreka2.Top = -prepreka2.Height;
+                    unistenaPrepreka2 = false;
+                    preprekaJacina2.Value = 100;
                 }
             }
             //preprekaJacina1.Value = 100;
@@ -287,8 +295,8 @@ namespace Raketa1
             // Micanje prepreka
             if (lijeviRub)
             {
-                prepreka1.Left -= (int)brzinaPrepreke;
-                prepreka2.Left += (int)brzinaPrepreke;
+                if (!unistenaPrepreka1) prepreka1.Left -= (int)brzinaPrepreke;
+                if(!unistenaPrepreka2) prepreka2.Left += (int)brzinaPrepreke;
                 if(prepreka1.Left < 0 - prepreka1.Width * 0.5)
                 {
                     lijeviRub = false;
@@ -297,8 +305,8 @@ namespace Raketa1
             }
             if(desniRub)
             {
-                prepreka1.Left += (int)brzinaPrepreke;
-                prepreka2.Left -= (int)brzinaPrepreke;
+                if (!unistenaPrepreka1) prepreka1.Left += (int)brzinaPrepreke;
+                if (!unistenaPrepreka2) prepreka2.Left -= (int)brzinaPrepreke;
                 if (prepreka1.Left > sirina - prepreka1.Width * 0.5)
                 {
                     lijeviRub = true;
@@ -374,10 +382,39 @@ namespace Raketa1
                         Controls.Remove(y);
                         y.Dispose();
                     }
-                    if (prepreka1.Bounds.IntersectsWith(y.Bounds) || prepreka2.Bounds.IntersectsWith(y.Bounds))
+                    if (prepreka1.Bounds.IntersectsWith(y.Bounds))
                     {
-                        Controls.Remove(y);
-                        y.Dispose();
+                        if (preprekaJacina1.Value > 0)
+                        {
+                            preprekaJacina1.Value -= 10;
+                            Controls.Remove(y);
+                            y.Dispose();
+                        }
+                        
+                        if(preprekaJacina1.Value <= 0)
+                        {
+                            unistenaPrepreka1 = true;
+                            povecajBodove(20);
+                            Controls.Remove(y);
+                            y.Dispose();
+                        }
+                    }
+                    if (prepreka2.Bounds.IntersectsWith(y.Bounds))
+                    {
+                        if (preprekaJacina2.Value > 0)
+                        {
+                            preprekaJacina2.Value -= 10;
+                            Controls.Remove(y);
+                            y.Dispose();
+                        }
+
+                        if(preprekaJacina2.Value <= 0)
+                        {
+                            unistenaPrepreka2 = true;
+                            povecajBodove(20);
+                            Controls.Remove(y);
+                            y.Dispose();
+                        }
                     }
                 }
                 if (kontrola is PictureBox komet && (string)komet.Tag == "komet")

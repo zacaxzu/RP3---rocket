@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labelaBodovi = new System.Windows.Forms.Label();
             this.prepreka1 = new System.Windows.Forms.PictureBox();
             this.prepreka2 = new System.Windows.Forms.PictureBox();
             this.labelaRestartPoruka = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.srce2 = new System.Windows.Forms.PictureBox();
             this.srce3 = new System.Windows.Forms.PictureBox();
             this.preprekaJacina1 = new System.Windows.Forms.ProgressBar();
+            this.preprekaJacina2 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prepreka2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brod)).BeginInit();
@@ -59,19 +59,6 @@
             // 
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // labelaBodovi
-            // 
-            this.labelaBodovi.AutoSize = true;
-            this.labelaBodovi.BackColor = System.Drawing.Color.Transparent;
-            this.labelaBodovi.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaBodovi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelaBodovi.Location = new System.Drawing.Point(26, 222);
-            this.labelaBodovi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelaBodovi.Name = "labelaBodovi";
-            this.labelaBodovi.Size = new System.Drawing.Size(127, 31);
-            this.labelaBodovi.TabIndex = 1;
-            this.labelaBodovi.Text = "Bodovi: 0";
             // 
             // prepreka1
             // 
@@ -218,10 +205,17 @@
             // 
             // preprekaJacina1
             // 
-            this.preprekaJacina1.Location = new System.Drawing.Point(219, 20);
+            this.preprekaJacina1.Location = new System.Drawing.Point(18, 221);
             this.preprekaJacina1.Name = "preprekaJacina1";
-            this.preprekaJacina1.Size = new System.Drawing.Size(156, 23);
+            this.preprekaJacina1.Size = new System.Drawing.Size(168, 23);
             this.preprekaJacina1.TabIndex = 15;
+            // 
+            // preprekaJacina2
+            // 
+            this.preprekaJacina2.Location = new System.Drawing.Point(214, 12);
+            this.preprekaJacina2.Name = "preprekaJacina2";
+            this.preprekaJacina2.Size = new System.Drawing.Size(164, 25);
+            this.preprekaJacina2.TabIndex = 16;
             // 
             // Form1
             // 
@@ -229,6 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(399, 449);
+            this.Controls.Add(this.preprekaJacina2);
             this.Controls.Add(this.preprekaJacina1);
             this.Controls.Add(this.srce3);
             this.Controls.Add(this.srce2);
@@ -238,7 +233,6 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelaPauza);
             this.Controls.Add(this.labelaRestartPoruka);
-            this.Controls.Add(this.labelaBodovi);
             this.Controls.Add(this.prepreka2);
             this.Controls.Add(this.prepreka1);
             this.Controls.Add(this.brod);
@@ -269,7 +263,6 @@
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label labelaBodovi;
         private System.Windows.Forms.PictureBox prepreka1;
         private System.Windows.Forms.PictureBox prepreka2;
         private System.Windows.Forms.Label labelaRestartPoruka;
@@ -284,6 +277,7 @@
         private System.Windows.Forms.PictureBox srce2;
         private System.Windows.Forms.PictureBox srce3;
         private System.Windows.Forms.ProgressBar preprekaJacina1;
+        private System.Windows.Forms.ProgressBar preprekaJacina2;
         //private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
